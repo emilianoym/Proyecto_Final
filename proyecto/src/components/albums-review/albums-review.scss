@@ -1,0 +1,248 @@
+.profile-pic-small {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.popular-post-wrapper {
+  max-width: 75%;
+  margin: 20px auto;
+}
+
+.popular-bar {
+  padding: 2px 0px;
+  border-radius: 0px;
+  margin-bottom: 10px;
+}
+
+.popular-title {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #555;
+}
+
+.review-item {
+  padding: 0 0;
+  margin: 0;
+}
+
+.review-content {
+  padding: 10px 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+
+}
+
+.left-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.album-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+
+.album-title {
+  color: #F5EDE0;
+  font-size: 25px;
+  margin: 0;
+  margin-top: auto;
+  font-weight: bold;
+}
+
+.artist-name {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 18px;
+  color: white;
+}
+
+.user-name {
+  color: #F2D57E;
+  margin: 5px 0 0;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.description {
+  margin-top: 12px;
+  color: #dcdcdc;
+}
+
+.like-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.likes-count {
+  color: white;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Para pantallas medianas */
+@media (max-width: 992px) {
+
+  /* Mantener márgenes laterales en todo tipo de pantallas */
+  .popular-post-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Ajustes adicionales por si en mobiles el margen no se respeta */
+  /* Mantiene el max-width del 75% pero agrega márgenes laterales seguros */
+  .popular-post-wrapper {
+    max-width: 75%;
+    margin: 20px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Tablets */
+  @media (max-width: 992px) {
+    .popular-post-wrapper {
+      max-width: 85%;
+      /* sigue siendo centrado, pero más cómodo */
+    }
+  }
+
+  /* Celulares */
+  @media (max-width: 576px) {
+    .popular-post-wrapper {
+      max-width: 95%;
+      /* para evitar que quede demasiado estrecho */
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+
+
+  .album-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .album-title {
+    font-size: 22px;
+  }
+
+  .artist-name {
+    font-size: 16px;
+  }
+}
+
+/* Para pantallas pequeñas (tablets) */
+@media (max-width: 768px) {
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .left-info {
+    width: 100%;
+  }
+
+  .user-name {
+    align-self: flex-end;
+    margin-top: -5px;
+  }
+
+  .album-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .album-title {
+    font-size: 20px;
+  }
+
+  .artist-name {
+    font-size: 15px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+
+/* Para celulares (muy importante) */
+@media (max-width: 576px) {
+  .popular-post-wrapper {
+    max-width: 95%;
+  }
+
+  .review-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .left-info {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .album-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+  }
+
+  .title-block {
+    justify-content: center;
+  }
+
+  .album-title {
+    font-size: 17px;
+  }
+
+  .artist-name {
+    font-size: 14px;
+  }
+
+  .user-name {
+    font-size: 14px;
+    align-self: flex-start;
+    margin-top: 2px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .likes-count {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,11 @@
+<div class="stars-container">
+
+  <i *ngFor="let star of [1,2,3,4,5]"
+     class="fa-star"
+     [ngClass]="{
+       'fas filled': star <= rating,
+       'far': star > rating
+     }">
+  </i>
+
+</div>

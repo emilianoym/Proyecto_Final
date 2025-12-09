@@ -1,0 +1,20 @@
+.router-wrapper {
+  min-height: 100vh;
+  background-image: url('/assets/fondo.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  padding-top: 20px;
+  padding-bottom: 150px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #555;
+}
+
+.no-padding-page {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+

@@ -1,0 +1,14 @@
+.stars-container {
+  display: flex;
+  gap: 6px;
+}
+.fa-star {
+  font-size: 28px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.filled {
+  color: #F2D57E;
+}
+.far {
+  color: transparent;
+}

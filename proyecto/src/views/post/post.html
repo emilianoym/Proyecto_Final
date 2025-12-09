@@ -1,0 +1,55 @@
+<div class="post-wrapper montserrat-letra">
+
+  <div class="popular-bar">
+    <h3 class="popular-title">Recomendaciones</h3>
+  </div>
+
+  <!-- Cargar posts -->
+  <div *ngFor="let post of posts" class="post-item">
+
+    <!-- línea arriba -->
+    <div class="divider"></div>
+
+    <div class="post-content">
+
+      <!-- TÍTULO + USER A LA DERECHA -->
+      <!-- TÍTULO + USER A LA DERECHA -->
+      <div class="header-row">
+        <h5 class="song-title">
+          {{ post.nombre_cancion }}</h5>
+        <div class="d-flex align-items-center gap-2">
+          <img [src]="post.foto_perfil || 'assets/default-user.png'" class="profile-pic-small" alt="User">
+          <h6 class="user-name">@{{ post.username }}</h6>
+        </div>
+      </div>
+      <h1 class="artist">{{ post.artista }}</h1>
+      <!-- DESCRIPCIÓN -->
+
+      <p class="description">{{ post.descripcion }}</p>
+
+      <!-- LINK -->
+      <a [href]="post.link_cancion" target="_blank" class="link">
+        Escuchar
+      </a>
+
+      <!-- LIKE + CONTADOR -->
+      <div class="like-row">
+        <app-like-button [postId]="post.id" [likes]="post.likes" (likedChange)="actualizarLikes(post, $event)">
+        </app-like-button>
+
+        <span class="likes-count">{{ post.likes }} likes</span>
+      </div>
+
+    </div>
+
+    <!-- línea abajo -->
+    <div class="divider"></div>
+
+  </div>
+
+  <!-- Botón NUEVO POST -->
+  <app-new-post-btn></app-new-post-btn>
+
+  <router-outlet></router-outlet>
+
+</div>

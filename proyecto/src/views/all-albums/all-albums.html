@@ -1,0 +1,30 @@
+<div class="popular-bar montserrat-letra">
+
+  <h3 class="popular-title">Popular Albums</h3>
+
+  <!-- ICONO -->
+  <img src="assets/filter_icon.png" class="filter-icon" [class.open]="mostrarFiltro" (click)="toggleFiltro()">
+
+  <!-- MENÚ DESPLEGABLE -->
+  <div class="filter-menu" *ngIf="mostrarFiltro">
+    <p class="filter-item" [class.active]="selectedGenre === 'all'" (click)="aplicarFiltro('all')">All</p>
+
+    <p class="filter-item" *ngFor="let genre of genres" [class.active]="selectedGenre === genre.nombre"
+      (click)="aplicarFiltro(genre.nombre)">
+      {{ genre.nombre }}
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="divider"></div>
+
+<div class="albums-wrapper">
+  <div class="row g-3 justify-content-center albums-bootstrap-row">
+    <div class="col-4 col-md-2 d-flex justify-content-center" *ngFor="let album of albums" (click)="verAlbum(album.id)">
+      <img [src]="album.direccion_img" class="album-img" [alt]="album.nombre_album">
+    </div>
+  </div>
+</div>

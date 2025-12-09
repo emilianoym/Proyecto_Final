@@ -1,0 +1,91 @@
+<!-- HEADER -->
+<div class="user-container">
+  <img [src]="userPhoto" class="profile-pic-header" alt="Profile">
+  <h2 class="user-title">@{{ username }}</h2>
+  <div class="config-img" (click)="toggleMenu()">
+    <img src="assets/config_icon.png" alt="config">
+  </div>
+  <!-- MENÚ DESPLEGABLE -->
+  <div class="config-menu" *ngIf="menuOpen">
+    <button (click)="cambiarFoto()" class="config-btn">Cambiar foto de perfil</button>
+    <button (click)="cerrarSesion()" class="config-btn">Cerrar sesión</button>
+  </div>
+</div>
+<div class="container mt-4">
+
+  <!-- BOTONES DE SWITCH -->
+  <div class="switch-container">
+    <button class="switch-btn" [class.active]="selectedTab === 'reviews'" (click)="selectedTab = 'reviews'">
+      Tus Reviews
+    </button>
+
+    <button class="switch-btn" [class.active]="selectedTab === 'posts'" (click)="selectedTab = 'posts'">
+      Tus Recomendaciones
+    </button>
+  </div>
+
+  <div class="divider" style="max-width: 75%; margin: 18px auto; margin-bottom: -15px;"></div>
+
+  <div class="row">
+
+    <!-- ===================== -->
+    <!--    LISTA DE REVIEWS   -->
+    <!-- ===================== -->
+    <div class="col-12" *ngIf="selectedTab === 'reviews'">
+
+      <div *ngFor="let review of reviews" class="review-item">
+        <div class="album-row">
+          <img [src]="review.direccion_img" class="album-img">
+
+          <div class="album-info">
+            <div class="d-flex align-items-center gap-2">
+              <h4 class="album-name">{{ review.nombre_album }}</h4>
+            </div>
+            <p class="artist-name">{{ review.artista }}</p>
+            <app-star-static [rating]="review.estrellas"></app-star-static>
+            <p class="review-date">{{ review.fecha_review | date:'mediumDate' }}</p>
+            <p class="review-description">{{ review.descripcion }}</p>
+
+            <div class="like-row">
+              <app-like-button [postId]="review.id" [likes]="review.likes"></app-like-button>
+              <span class="likes-count">{{ review.likes }} likes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+      </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!--    LISTA DE POST/RECS     -->
+    <!-- ========================= -->
+    <div class="col-12" *ngIf="selectedTab === 'posts'">
+
+      <div *ngFor="let post of posts" class="post-item">
+        <div class="post-content">
+          <div class="d-flex align-items-center gap-2">
+            <h4 class="post-title">{{ post.nombre_cancion }}</h4>
+          </div>
+          <p class="artist-name">{{ post.artista }}</p>
+
+          <p class="post-description">{{ post.descripcion }}</p>
+
+          <a [href]="post.link_cancion" class="song-link" target="_blank">
+            Escuchar
+          </a>
+
+          <div class="like-row">
+            <app-like-button [postId]="post.id" [likes]="post.likes"></app-like-button>
+            <span class="likes-count">{{ post.likes }} likes</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

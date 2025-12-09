@@ -1,0 +1,24 @@
+<div class="background">
+  <div class="login-wrapper montserrat-letra">
+    <div class="login-card">
+
+      <img class="logo" src="assets/marca.png">
+
+      <h1 class="welcome">Regístrate</h1>
+
+      <label class="label">Correo electrónico</label>
+      <input type="email" class="input" [(ngModel)]="correo">
+
+      <label class="label">Nombre de usuario</label>
+      <input type="text" class="input" [(ngModel)]="username">
+
+      <label class="label">Contraseña</label>
+      <input type="password" class="input" [(ngModel)]="contrasena">
+
+      <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+
+      <button class="login-btn" (click)="registrar()">Registrarse</button>
+
+    </div>
+  </div>
+</div>

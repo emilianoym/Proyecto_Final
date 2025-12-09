@@ -1,0 +1,25 @@
+<div class="new-post-wrapper montserrat-letra">
+
+  <h1 class="title">Crear nuevo post</h1>
+
+  <div class="form-container">
+
+    <label class="label">Nombre de la canción</label>
+    <input type="text" [(ngModel)]="nombre_cancion" class="input">
+
+    <label class="label">Artista</label>
+    <input type="text" [(ngModel)]="artista" class="input">
+
+    <label class="label">Descripción</label>
+    <textarea [(ngModel)]="descripcion" class="textarea" rows="4"></textarea>
+
+    <label class="label">Link de la canción</label>
+    <input type="text" [(ngModel)]="link_cancion" class="input" placeholder="URL de YouTube / Spotify">
+
+    <div class="btn-container">
+      <button class="btn-create" (click)="crearPost()">Publicar</button>
+    </div>
+
+  </div>
+
+</div>

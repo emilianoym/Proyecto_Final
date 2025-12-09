@@ -1,0 +1,22 @@
+<div class="background">
+<div class="login-wrapper  montserrat-letra">
+  <div class="login-card">
+    <img class="logo" src="assets/marca.png">
+    <h1 class="welcome">Cada escucha cuenta. Comparte la tuya!</h1>
+    <label class="label">Usuario</label>
+    <input type="usarname" class="input" [(ngModel)]="username" placeholder="ej. user1">
+
+    <label class="label">Contraseña</label>
+    <input type="password" class="input" [(ngModel)]="contrasena" placeholder="ej. 12345">
+    <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+    <button class="login-btn" (click)="login()">Ingresar</button>
+    <div class="new-user">
+    <h3>¿No tienes cuenta?</h3>
+    <p class="register" routerLink="/register">Registrate</p>
+  </div>
+  </div>
+</div>
+</div>
+<div class="footer montserrat-letra">
+  <p>© 2025 GrooveRoom — All rights reserved</p>
+</div>

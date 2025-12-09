@@ -1,0 +1,148 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #0F0F0F;
+}
+
+/* ----- LOGO WRAPPER ----- */
+.logo-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 15, 15, 0.85);
+  /* Fondo semi-transparente */
+  backdrop-filter: blur(12px);
+  /* Efecto Glassmorphism */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ----- LOGO CONTAINER (Grid Layout) ----- */
+.logo-container {
+  background-color: transparent;
+  padding: 10px 20px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  /* 3 columns: left, center, right */
+  align-items: center;
+  position: relative;
+}
+
+/* Columna izquierda (placeholder) */
+.left-placeholder {
+  width: 35px;
+  /* Same width as user icon */
+}
+
+/* Logo centrado */
+.logo-img {
+  width: 250px;
+  cursor: pointer;
+  z-index: 1;
+  transition: width 0.3s ease;
+  justify-self: center;
+  /* Center in the middle column */
+}
+
+/* Ícono de usuario a la derecha */
+.user-img {
+  width: 40px;
+  /* Slightly larger for profile pic */
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  object-fit: cover;
+  justify-self: end;
+  /* Align to the right in the right column */
+  transition: width 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ----- NAVBAR ----- */
+.navbar-groove {
+  margin: 0;
+  padding: 15px 0;
+  background-color: transparent !important;
+  color: white;
+
+  a {
+    transition: all 0.3s ease;
+    position: relative;
+    opacity: 0.8;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
+}
+
+/* ----- HOVERS ----- */
+.nav-link {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #F2D57E;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+.home-hover:hover,
+.album-hover:hover,
+.post-hover:hover,
+.for-you-hover:hover {
+  transform: translateY(-2px);
+  color: #F2D57E;
+  text-shadow: 0 0 10px rgba(242, 213, 126, 0.5);
+}
+
+/* Contenedor de posts */
+.post-wrapper {
+  max-width: 75%;
+  margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    width: 200px;
+  }
+
+  .user-img {
+    width: 30px;
+  }
+
+  .left-placeholder {
+    width: 30px;
+  }
+
+  .navbar-groove {
+    padding: 15px 0;
+
+    a {
+      font-size: 18px;
+      padding: 0 10px !important;
+    }
+  }
+
+  .post-wrapper {
+    max-width: 90%;
+  }
+}

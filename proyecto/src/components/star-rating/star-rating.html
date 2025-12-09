@@ -1,0 +1,14 @@
+<div class="stars-container"
+     (mouseleave)="resetHover()">
+
+  <i *ngFor="let star of [1,2,3,4,5]"
+     class="fa-star"
+     [ngClass]="{
+       'fas filled': star <= rating || star <= hoverIndex,
+       'far': star > rating && star > hoverIndex
+     }"
+     (mouseenter)="setHover(star)"
+     (click)="setRating(star)">
+  </i>
+
+</div>

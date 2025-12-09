@@ -1,0 +1,36 @@
+<div class="container album-container py-4 montserrat-letra" *ngIf="album">
+
+  <div class="row">
+
+    <div class="col-12 col-lg-4 d-flex flex-column align-items-center">
+      <img [src]="album.direccion_img" class="img-fluid rounded album-cover mb-3" alt="Album Cover">
+    </div>
+
+    <div class="col-12 col-lg-4 d-flex flex-column align-items-lg-start align-items-center text-lg-start">
+      <h1 class="album-title">{{ album.nombre_album }}</h1>
+      <h2 class="album-artist">{{ album.artista }}</h2>
+      <p class="album-year text-secondary">{{ album.fecha_lanzamiento | date:'yyyy' }}</p>
+    </div>
+
+    <div class="col-12 col-lg-4">
+
+      <div class="d-flex justify-content-lg-end justify-content-end mb-3">
+        <app-star-rating (ratingChange)="onRatingChange($event)"></app-star-rating>
+      </div>
+
+
+
+      <textarea rows="4" class="form-control review-box mb-3 " [(ngModel)]="reviewDescription" placeholder="Añade una review..">
+      </textarea>
+
+      <div class="text-end">
+        <button class="btn review-btn fw-bold px-4" (click)="publicarReview()">
+          Publicar
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

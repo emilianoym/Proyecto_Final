@@ -1,0 +1,54 @@
+.album-title {
+  font-size: 60px;
+  color: white;
+  font-weight: bold;
+}
+
+.album-artist {
+  font-size: 28px;
+  color: white;
+}
+
+.album-year {
+  opacity: 0.7;
+}
+
+.album-cover {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.review-box,
+.review-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.review-box:focus,
+.review-input:focus {
+  border-color: #F2D57E;
+  box-shadow: 0 0 0 0.25rem rgba(242, 213, 126, 0.25);
+  outline: none;
+}
+
+.review-title {
+  color: white;
+}
+
+.review-description {
+  color: white;
+}
+
+.review-btn {
+  background-color: #F2D57E;
+  border-radius: 30px;
+}
+
+textarea::placeholder {
+  color: #ccc;
+  opacity: 1;
+}

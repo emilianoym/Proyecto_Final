@@ -1,0 +1,42 @@
+<div class="popular-post-wrapper montserrat-letra">
+  <div class="popular-bar">
+    <h3 class="popular-title">Reviews</h3>
+  </div>
+  <div *ngFor="let review of reviews" class="review-item">
+    <div class="divider"></div>
+    <div class="review-content">
+      <div class="review-header">
+        <!-- Imagen -->
+        <div class="left-info">
+          <img [src]="review.direccion_img" alt="Album" class="album-img">
+          <!-- info-->
+          <div class="title-block">
+            <h5 class="album-title">{{ review.nombre_album }}</h5>
+            <p class="artist-name">{{ review.artista }}</p>
+            <!-- estrellas -->
+            <app-star-static [rating]="review.estrellas"></app-star-static>
+          </div>
+        </div>
+        <!-- usuario -->
+        <div class="d-flex align-items-center gap-2">
+          <img [src]="review.foto_perfil || 'assets/default-user.png'" class="profile-pic-small" alt="User">
+          <h6 class="user-name">@{{ review.username }}</h6>
+        </div>
+
+      </div>
+      <!-- descripción -->
+      <p class="description">{{ review.descripcion }}</p>
+      <!-- Like-->
+      <div class="like-row">
+        <app-like-button [postId]="review.id" [likes]="review.likes" (likedChange)="actualizarLikes(review, $event)">
+        </app-like-button>
+        <span class="likes-count">{{ review.likes }} likes</span>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+</div>

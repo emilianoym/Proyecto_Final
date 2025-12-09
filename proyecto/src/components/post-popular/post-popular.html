@@ -1,0 +1,41 @@
+<div class="post-wrapper montserrat-letra">
+
+  <div class="popular-bar">
+    <h3 class="popular-title">Recomendaciones Populares</h3>
+  </div>
+
+  <!-- Cargar posts -->
+  <div *ngFor="let post of posts" class="post-item">
+
+    <div class="divider"></div>
+
+    <div class="post-content">
+
+      <div class="header-row">
+        <h5 class="song-title">
+          {{ post.nombre_cancion }} |
+          <span class="artist">{{ post.artista }}</span>
+        </h5>
+        <div class="user-info-container">
+          <img [src]="post.foto_perfil || 'assets/default-user.png'" class="profile-pic-small" alt="User">
+          <h6 class="user-name">@{{ post.username }}</h6>
+        </div>
+      </div>
+
+      <p class="description">{{ post.descripcion }}</p>
+
+      <a [href]="post.link_cancion" target="_blank" class="link">
+        Escuchar
+      </a>
+
+      <div class="like-row">
+        <app-like-button [postId]="post.id" [likes]="post.likes" (likedChange)="actualizarLikes(post, $event)">
+        </app-like-button>
+
+        <span class="likes-count">{{ post.likes }}</span>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </div>
+
+</div>

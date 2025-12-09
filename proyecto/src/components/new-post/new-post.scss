@@ -1,0 +1,33 @@
+.floating-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F2D57E 0%, #d4b04d 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0F0F0F;
+  font-size: 36px;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: none;
+  box-shadow: 0 4px 15px rgba(242, 213, 126, 0.4);
+  outline: none;
+  padding-bottom: 4px;
+  /* Visual centering adjustment */
+}
+
+.floating-btn:hover {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 8px 25px rgba(242, 213, 126, 0.6);
+  color: #0F0F0F;
+}
+
+.floating-btn:active {
+  transform: scale(0.95);
+}

@@ -1,0 +1,22 @@
+.like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.like-btn:hover {
+  transform: scale(1.15);
+}
+
+.fa-heart {
+  font-size: 28px;
+  color: #888;
+  transition: color .25s ease, transform .25s ease;
+}
+
+.liked {
+  color: #F20544 !important;
+  transform: scale(1.25);
+}

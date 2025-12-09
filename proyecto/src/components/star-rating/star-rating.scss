@@ -1,0 +1,23 @@
+.stars-container {
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.fa-star {
+  font-size: 30px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.filled {
+  color: #F2D57E;
+  transform: scale(1.1);
+}
+
+.far {
+  color: #777;
+}
+
+.fa-star:hover {
+  transform: scale(1.2);
+}

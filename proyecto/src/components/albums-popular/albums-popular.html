@@ -1,0 +1,17 @@
+<div class="albums-wrapper">
+
+  <!-- Barra -->
+  <div class="popular-bar montserrat-letra d-flex justify-content-between align-items-center"
+    routerLink="/albums/all-albums">
+    <h3 class="popular-title">Albums Populares</h3>
+    <img class="arrow-container" src="assets/arrow.png" alt="arrow">
+  </div>
+  <div class="divider"></div>
+  <!-- Álbumes -->
+  <div class="row g-3 justify-content-center albums-bootstrap-row">
+    <div class="col-6 col-md-2 d-flex justify-content-center" *ngFor="let album of popularAlbums"
+      (click)="verAlbum(album.id)">
+      <img [src]="album.direccion_img" class="album-img" [alt]="album.nombre_album">
+    </div>
+  </div>
+</div>

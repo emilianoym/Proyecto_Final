@@ -1,0 +1,71 @@
+.albums-wrapper {
+  max-width: 75%;
+  margin: 20px auto;
+  margin-bottom: 80px;
+  margin-top: 40px;
+}
+
+.popular-bar {
+  padding: 5px 0px;
+  margin-bottom: 3px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.popular-title {
+  color: white;
+  font-size: 25px;
+  margin: 0;
+  text-align: start;
+  justify-self: flex-start;
+  font-weight: bold;
+}
+
+.album-img {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+  margin-top: 8px;
+}
+
+.album-img:hover {
+  transform: scale(1.05);
+}
+
+.arrow-container {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.2s ease;
+  justify-self: right;
+  display: flex-end;
+  align-items: flex-end;
+}
+
+.arrow-container:hover {
+  opacity: 1;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #555;
+}
+
+@media (max-width: 768px) {
+  .albums-wrapper {
+    max-width: 90%;
+    /* Más ancho en móvil */
+  }
+
+  .col-4 {
+    width: 50%;
+    /* 2 columnas en móvil */
+  }
+}
