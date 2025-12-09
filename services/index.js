@@ -15,7 +15,6 @@ app.get("/usuarios", (req, res) => {
   });
 });
 
-// ▶ Actualizar foto de perfil
 app.put("/user/:id/photo", (req, res) => {
   const { foto_perfil } = req.body;
   db.query(
@@ -41,7 +40,6 @@ app.post("/usuarios", (req, res) => {
 });
 
 
-// ▶ Obtener todos los posts
 app.get("/posts", (req, res) => {
   db.query(
     `SELECT Post.*, Usuarios.username, Usuarios.foto_perfil
@@ -55,7 +53,6 @@ app.get("/posts", (req, res) => {
   );
 });
 
-// ▶ Crear post
 app.post("/posts", (req, res) => {
   const { usuario_id, nombre_cancion, artista, descripcion, link_cancion } = req.body;
   db.query(
@@ -71,7 +68,6 @@ app.post("/posts", (req, res) => {
 });
 
 
-// ▶ Obtener álbumes
 app.get("/albums", (req, res) => {
   const genre = req.query.genre;
 
@@ -89,7 +85,6 @@ app.get("/albums", (req, res) => {
   });
 });
 
-// ▶ Obtener álbum por ID
 app.get("/albums/:id", (req, res) => {
   db.query("SELECT * FROM Albums WHERE id = ?", [req.params.id], (err, result) => {
     if (err) return res.status(500).json(err);
@@ -98,7 +93,6 @@ app.get("/albums/:id", (req, res) => {
 });
 
 
-// ▶ Crear reseña
 app.post("/reviews", (req, res) => {
   const { id_album, id_usuario, estrellas, descripcion } = req.body;
 
@@ -179,7 +173,6 @@ app.post("/login", (req, res) => {
   );
 });
 
-// ▶ Obtener usuario por ID
 app.get("/user/:id", (req, res) => {
   db.query("SELECT id, username, correo, foto_perfil FROM Usuarios WHERE id = ?", [req.params.id], (err, result) => {
     if (err) return res.status(500).json(err);
@@ -215,7 +208,6 @@ app.get("/reviews/:id", (req, res) => {
   });
 });
 
-// ▶ Obtener TODAS las reviews
 app.get("/reviews", (req, res) => {
   db.query(`
     SELECT Reviews.*, Usuarios.username, Usuarios.foto_perfil, Albums.nombre_album, Albums.artista, Albums.direccion_img
